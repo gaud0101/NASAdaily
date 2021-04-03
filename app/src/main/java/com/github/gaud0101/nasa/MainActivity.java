@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements HelpText {
     private static final String DEFAULT_API_KEY = "DgPLcIlnmN0Cwrzcg3e9NraFaYLIDI68Ysc6Zh3d";
     public static final String PREFERENCES = "NASA";
     public static final String PREF_DATE = "selected-date";
+    public static final String PREF_API = "api-key";
 
     private final NavHelper<MainActivity> nav = new NavHelper<>(this);
 
@@ -49,8 +50,11 @@ public class MainActivity extends AppCompatActivity implements HelpText {
     private void fetchImage(GregorianCalendar cal) {
         lastDate = cal.getTimeInMillis();
 
+        SharedPreferences prefs = getSharedPreferences(MainActivity.PREFERENCES, MODE_PRIVATE);
+        String key = prefs.getString(PREF_API, DEFAULT_API_KEY);
+
         ProgressBar bar = findViewById(R.id.progress);
-        new DownloadTask().execute(new DownloadTask.Params(bar, getSupportFragmentManager(), R.id.fragment, cal, DEFAULT_API_KEY));
+        new DownloadTask().execute(new DownloadTask.Params(bar, getSupportFragmentManager(), R.id.fragment, cal, key));
     }
 
     @Override

@@ -16,8 +16,11 @@ import android.widget.CursorAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class FavoritesActivity extends AppCompatActivity implements HelpText {
     private static class FavoritesCursorAdapter extends CursorAdapter {
@@ -50,8 +53,16 @@ public class FavoritesActivity extends AppCompatActivity implements HelpText {
 
             ImageButton btn = view.findViewById(R.id.btn_delete);
             btn.setOnClickListener((v) -> {
-                Database db = new Database(view.getContext());
+                Database db = new Database(context);
                 db.unfavorite(id);
+
+                Snackbar.make(view, R.string.snack_unfaved, Snackbar.LENGTH_LONG)
+                        .setAction(R.string.undo, (u) -> {
+                            db.favorite(titleTxt, dateTxt);
+                            this.swapCursor(db.listFavorites());
+                        })
+                        .show();
+
                 this.swapCursor(db.listFavorites());
             });
         }

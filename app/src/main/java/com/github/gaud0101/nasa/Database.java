@@ -49,11 +49,15 @@ public class Database {
     }
 
     public long favorite(DownloadTask.Result item) {
+        return favorite(item.title, item.date);
+    }
+
+    public long favorite(String title, String date) {
         SQLiteDatabase db = helper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(COLUMN_TITLE, item.title);
-        values.put(COLUMN_DATE, item.date);
+        values.put(COLUMN_TITLE, title);
+        values.put(COLUMN_DATE, date);
 
         return db.insert(TABLE, null, values);
     }

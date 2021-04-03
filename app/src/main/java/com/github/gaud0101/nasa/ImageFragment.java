@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -77,6 +78,7 @@ public class ImageFragment extends Fragment {
         fab.setOnClickListener((v) -> {
             Database db = new Database(getContext());
             db.favorite(mParam1);
+            Toast.makeText(getContext(), R.string.toast_faved, Toast.LENGTH_SHORT).show();
         });
 
         return view;

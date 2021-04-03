@@ -11,15 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NASAImageOfTheDay">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:label="@string/menu_home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DateActivity" />
-        <activity android:name=".FavoritesActivity" />
+        <activity android:name=".DateActivity" android:label="@string/menu_date"/>
+        <activity android:name=".FavoritesActivity" android:label="@string/menu_favorites"/>
+        <activity android:name=".SettingsActivity" android:label="@string/menu_settings"/>
     </application>
 
 </manifest>

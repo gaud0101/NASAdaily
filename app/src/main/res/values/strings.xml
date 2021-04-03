@@ -12,11 +12,20 @@
     <string name="save_date">Choose Date</string>
     <string name="today_date">Today</string>
 
-    <string name="help_main">TODO: help_main</string>
-    <string name="help_date">TODO: help_date</string>
-    <string name="help_favorites">TODO: help_favorites</string>
+    <string name="help_main">Clicking the floating star button adds this image to your favorites.</string>
+    <string name="help_date">Choose a date to view the image of that day, or choose today to view the latest image.</string>
+    <string name="help_favorites">Choose a row to view that image, or tap the trashcan to remove a favorite.</string>
+    <string name="help_settings">Enter a custom API key, if you have one.</string>
 
     <string name="btn_fave">Add to Favorites</string>
     <string name="img">NASA Image of the Day</string>
     <string name="btn_unfave">Remove from Favorites</string>
+    <string name="save_key">Save API Key</string>
+
+    <string name="toast_faved">Favorite Added</string>
+    <string name="snack_unfaved">Favorite Removed</string>
+
+    <string name="undo">UNDO</string>
+
+    <string name="api_key">API Key</string>
 </resources>
