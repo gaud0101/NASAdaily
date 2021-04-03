@@ -13,6 +13,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+/**
+ * Helper class that handles navigation between activities.
+ * @param <T>
+ */
 public class NavHelper<T extends AppCompatActivity & HelpText> {
     private final T activity;
 
@@ -20,6 +24,9 @@ public class NavHelper<T extends AppCompatActivity & HelpText> {
         this.activity = activity;
     }
 
+    /**
+     * Call in the Activity's onCreate.
+     */
     public void onCreate() {
         Toolbar toolbar = activity.findViewById(R.id.toolbar);
         activity.setSupportActionBar(toolbar);
@@ -38,6 +45,11 @@ public class NavHelper<T extends AppCompatActivity & HelpText> {
         navigationView.setNavigationItemSelectedListener((item) -> this.onNavigate(item));
     }
 
+    /**
+     * Call whenever a menu item is clicked.
+     * @param item
+     * @return
+     */
     public boolean onNavigate(MenuItem item) {
         Class<?> klass;
 

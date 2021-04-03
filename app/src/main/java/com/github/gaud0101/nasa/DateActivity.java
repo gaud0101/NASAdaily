@@ -11,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.GregorianCalendar;
 
+/**
+ * Activity for selecting the currently visible image.
+ */
 public class DateActivity extends AppCompatActivity implements HelpText {
     private final NavHelper<DateActivity> nav = new NavHelper<>(this);
 

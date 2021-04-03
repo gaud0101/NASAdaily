@@ -10,15 +10,43 @@ import android.provider.BaseColumns;
 
 import java.util.GregorianCalendar;
 
+/**
+ * Data layer.
+ */
 public class Database {
+    /**
+     * Name of the title column.
+     */
     public final static String COLUMN_TITLE = "title";
+
+    /**
+     * Name of the date column.
+     */
     public final static String COLUMN_DATE = "date";
+
+    /**
+     * Name of the table.
+     */
     private final static String TABLE = "favorites";
 
+    /**
+     * Helper for managing database migrations.
+     */
     private static class Helper extends SQLiteOpenHelper {
+        /**
+         * Version of the database schema.
+         */
         public static final int VERSION = 1;
+
+        /**
+         * Name of the database.
+         */
         public static final String NAME = "nasa.db";
 
+        /**
+         * Construct a database helper.
+         * @param context
+         */
         public Helper(Context context) {
             super(context, NAME, null, VERSION);
         }
@@ -44,14 +72,29 @@ public class Database {
 
     private final Helper helper;
 
+    /**
+     * Construct a Database instance.
+     * @param context
+     */
     public Database(Context context) {
         helper = new Helper(context);
     }
 
+    /**
+     * Mark the given item as a favorite.
+     * @param item The item in question.
+     * @return Newly inserted id.
+     */
     public long favorite(DownloadTask.Result item) {
         return favorite(item.title, item.date);
     }
 
+    /**
+     * Mark the given item as a favorite.
+     * @param title Title of the item.
+     * @param date The date of the item.
+     * @return Newly inserted id.
+     */
     public long favorite(String title, String date) {
         SQLiteDatabase db = helper.getWritableDatabase();
 
@@ -62,11 +105,19 @@ public class Database {
         return db.insert(TABLE, null, values);
     }
 
+    /**
+     * Remove an item from favorites.
+     * @param id
+     */
     public void unfavorite(long id) {
         SQLiteDatabase db = helper.getWritableDatabase();
         db.delete(TABLE, BaseColumns._ID + " = ?", new String[] {Long.toString(id)});
     }
 
+    /**
+     * Get a Cursor of all favorites.
+     * @return
+     */
     public Cursor listFavorites() {
         SQLiteDatabase db = helper.getReadableDatabase();
 
@@ -79,6 +130,11 @@ public class Database {
         return db.query(TABLE, projection, null, null, null, null, null);
     }
 
+    /**
+     * Get the timestamp in milliseconds.
+     * @param id
+     * @return
+     */
     public long getMillis(long id) {
         SQLiteDatabase db = helper.getReadableDatabase();
 

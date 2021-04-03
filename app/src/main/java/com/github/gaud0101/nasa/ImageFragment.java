@@ -18,9 +18,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.net.URISyntaxException;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link ImageFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Fragment subclass for displaying a NASA image of the day.
  */
 public class ImageFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";

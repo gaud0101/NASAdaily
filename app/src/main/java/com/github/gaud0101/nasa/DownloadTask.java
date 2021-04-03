@@ -20,12 +20,38 @@ import java.util.GregorianCalendar;
 
 import javax.net.ssl.HttpsURLConnection;
 
+/**
+ * Background task for fetching an image given a particular date.
+ */
 public class DownloadTask extends AsyncTask<DownloadTask.Params, Float, DownloadTask.Result> {
+
+    /**
+     * The date and UI elements to fetch/update.
+     */
     public static class Params {
+        /**
+         * What day to fetch.
+         */
         public final GregorianCalendar date;
+
+        /**
+         * What api key to use.
+         */
         public final String apiKey;
+
+        /**
+         * ProgressBar to update.
+         */
         public final ProgressBar progressBar;
+
+        /**
+         * The fragment manager for the MainActivity.
+         */
         public final FragmentManager manager;
+
+        /**
+         * Where to put the image fragment.
+         */
         public final int container;
 
         public Params(ProgressBar progressBar, FragmentManager manager, int container, GregorianCalendar date, String apiKey) {
@@ -37,11 +63,33 @@ public class DownloadTask extends AsyncTask<DownloadTask.Params, Float, Download
         }
     }
 
+    /**
+     * The information and image data associated with a date.
+     */
     public static class Result implements Serializable {
+        /**
+         * The raw image data.
+         */
         public final byte[] image;
+
+        /**
+         * The date NASA reported.
+         */
         public final String date;
+
+        /**
+         * An explanation of the image.
+         */
         public final String explanation;
+
+        /**
+         * Link to high definition image.
+         */
         public final URL hdurl;
+
+        /**
+         * The title of the image.
+         */
         public final String title;
 
         private Result(JSONObject obj, byte[] image) throws JSONException, MalformedURLException {

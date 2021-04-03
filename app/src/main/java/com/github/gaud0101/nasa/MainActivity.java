@@ -10,10 +10,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.GregorianCalendar;
 
+/**
+ * Main activity for the application.
+ */
 public class MainActivity extends AppCompatActivity implements HelpText {
     private static final String DEFAULT_API_KEY = "DgPLcIlnmN0Cwrzcg3e9NraFaYLIDI68Ysc6Zh3d";
+
+    /**
+     * Name to use in SharedPreferences.
+     */
     public static final String PREFERENCES = "NASA";
+
+    /**
+     * SharedPreferences key for the most recent date.
+     */
     public static final String PREF_DATE = "selected-date";
+
+    /**
+     * SharedPreferences key for a custom API key.
+     */
     public static final String PREF_API = "api-key";
 
     private final NavHelper<MainActivity> nav = new NavHelper<>(this);

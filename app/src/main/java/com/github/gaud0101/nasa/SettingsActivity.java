@@ -12,6 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.GregorianCalendar;
 
+/**
+ * Activity for configuring the application.
+ */
 public class SettingsActivity extends AppCompatActivity implements HelpText {
     private final NavHelper<SettingsActivity> nav = new NavHelper<>(this);
 

@@ -22,6 +22,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 
+/**
+ * Activity for managing favorite images.
+ */
 public class FavoritesActivity extends AppCompatActivity implements HelpText {
     private static class FavoritesCursorAdapter extends CursorAdapter {
         public FavoritesCursorAdapter(Context context, Cursor cursor) {
