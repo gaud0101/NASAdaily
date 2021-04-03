@@ -14,4 +14,9 @@
 
     <string name="help_main">TODO: help_main</string>
     <string name="help_date">TODO: help_date</string>
+    <string name="help_favorites">TODO: help_favorites</string>
+
+    <string name="btn_fave">Add to Favorites</string>
+    <string name="img">NASA Image of the Day</string>
+    <string name="btn_unfave">Remove from Favorites</string>
 </resources>

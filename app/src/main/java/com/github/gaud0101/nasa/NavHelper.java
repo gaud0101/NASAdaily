@@ -50,6 +50,10 @@ public class NavHelper<T extends AppCompatActivity & HelpText> {
                 klass = DateActivity.class;
                 break;
 
+            case R.id.menu_favorites:
+                klass = FavoritesActivity.class;
+                break;
+
             case R.id.menu_help:
                 new AlertDialog.Builder(activity, R.style.Theme_AppCompat_DayNight_Dialog)
                         .setMessage(activity.getHelpText())
