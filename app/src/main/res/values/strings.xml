@@ -15,7 +15,7 @@
     <string name="help_main">Clicking the floating star button adds this image to your favorites.</string>
     <string name="help_date">Choose a date to view the image of that day, or choose today to view the latest image.</string>
     <string name="help_favorites">Choose a row to view that image, or tap the trashcan to remove a favorite.</string>
-    <string name="help_settings">Enter a custom API key, if you have one.</string>
+    <string name="help_settings">Enter a custom API key if you have one.</string>
 
     <string name="btn_fave">Add to Favorites</string>
     <string name="img">NASA Image of the Day</string>

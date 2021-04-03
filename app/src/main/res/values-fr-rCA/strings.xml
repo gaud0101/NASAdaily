@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Image du jour de la NASA</string>
+    <string name="open_drawer">Ouvrir la Navigation</string>
+    <string name="close_drawer">Fermer la Navigation</string>
+    <string name="menu_home">Accueil</string>
+    <string name="menu_favorites">Favoris</string>
+    <string name="menu_settings">Paramètres</string>
+    <string name="menu_date">Date</string>
+    <string name="menu_help">Aide</string>
+    <string name="save_date">Choisissez cette Date</string>
+    <string name="today_date">Aujourd\'hui</string>
+    <string name="help_main">Cliquez sur le bouton étoile flottante pour ajouter cette image à vos favoris.</string>
+    <string name="help_date">Choisissez une date pour afficher l\'image de ce jour ou choisissez aujourd\'hui pour afficher la dernière image.</string>
+    <string name="help_favorites">Choisissez une ligne pour afficher cette image ou appuyez sur la corbeille pour supprimer un favori.</string>
+    <string name="help_settings">Saisissez une clé API si vous en avez une.</string>
+    <string name="btn_fave">Ajouter aux Favoris</string>
+    <string name="img">Image du jour de la NASA</string>
+    <string name="btn_unfave">Retirer des Favoris</string>
+    <string name="save_key">Enregistrer la clé API</string>
+    <string name="toast_faved">Favoris Ajoutés</string>
+    <string name="snack_unfaved">Favori Supprimé</string>
+    <string name="undo">ANNULER</string>
+    <string name="api_key">clé API</string>
+</resources>
